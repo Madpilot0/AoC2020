@@ -1,4 +1,3 @@
-const { exec } = require('child_process')
 const tools = require('./tools')
 
 const passwords = tools.readFromFile('../inputs/day2.txt')

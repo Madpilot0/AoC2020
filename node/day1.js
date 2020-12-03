@@ -1,4 +1,3 @@
-const { exec } = require('child_process')
 const tools = require('./tools')
 
 const expenses = tools.readFromFile('../inputs/day1.txt')
