@@ -15,10 +15,10 @@ def run_program(program):
     operator, amount = program[cur_index].split(" ")
     
     if operator == "acc":
-      accum = eval(f"{accum} {amount}")
+      accum += int(amount)
 
     if operator == "jmp":
-      cur_index = eval(f"{cur_index} {amount}")
+      cur_index += int(amount)
     else:
       cur_index += 1
 
@@ -37,7 +37,7 @@ def fix_program(program, tested_nodes=set()):
     operator, amount = program[cur_index].split(" ")
 
     if operator == "acc":
-      accum = eval(f"{accum} {amount}")
+      accum += int(amount)
 
     if cur_index not in tested_nodes and not has_changed:
       has_changed = True
@@ -48,7 +48,7 @@ def fix_program(program, tested_nodes=set()):
         operator = "jmp"
     
     if operator == "jmp":
-      cur_index = eval(f"{cur_index} {amount}")
+      cur_index += int(amount)
     else:
       cur_index += 1
 
